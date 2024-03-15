@@ -104,6 +104,9 @@
    .top-filter-box{
     margin-top: 20px
    }
+   #product1 .pro img{
+    width: 220px !important;
+   }
  }
 
  /* ======login page ends================ */
@@ -1480,3 +1483,8 @@ margin-top: 50px;
   margin-left: 22%;
 }
 /* ==========ends=============== */
+.skeleton-box-div{
+  border: 1px solid #e0e0e0;
+    padding: 15px;
+    border-radius: 20px;
+}

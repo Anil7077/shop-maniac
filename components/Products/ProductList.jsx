@@ -4,40 +4,49 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import SkeletonLoader from '../Common/SkeletonLoader'
 
-const ProductList = ({ products, setProducts }) => {
+const ProductList = ({ products, setProducts, loadingtime }) => {
     const [sort, setSort] = useState("")
     const [itemPerPage, setItemPerPage] = useState()
     const dispatch = useDispatch()
+    const [loading, setLoading] = useState(false)
     const users = useSelector((state) => state)
     console.log(users.newCart.myCart);
 
     useEffect(() => {
         const getSorted = () => {
-            try{
+            setLoading(true)
+            try {
                 axios.get(`https://fakestoreapi.com/products?sort=${sort}`).then((response) => {
                     // console.log("my data",response);
                     setProducts(response.data)
                 })
-            }catch(error){
+            } catch (error) {
                 console.log(error);
+            } finally{
+                setLoading(false)
             }
         }
-        if(sort !== "") getSorted()
-    },[sort])
+        if (sort !== "") getSorted()
+    }, [sort])
     useEffect(() => {
         const getItemsPerPage = () => {
-            try{
+            setLoading(true)
+            try {
                 axios.get(`https://fakestoreapi.com/products?limit=${itemPerPage}`).then((response) => {
                     // console.log("my data",response);
                     setProducts(response.data)
                 })
-            }catch(error){
+            } catch (error) {
                 console.log(error);
+            }finally{
+                setLoading(false)
             }
         }
-        if(itemPerPage) getItemsPerPage()
-    },[itemPerPage])
+        if (itemPerPage) getItemsPerPage()
+    }, [itemPerPage])
+console.log(loading);
 
     const handleCart = (prodDetails) => {
         console.log(prodDetails);
@@ -80,28 +89,57 @@ const ProductList = ({ products, setProducts }) => {
             <div className='product-listing' id='product1'>
                 <div className='pro-container'>
                     <div className="row">
-                        {products && products.length > 0 &&
-                            products.map((item, i) => (
-                                <div className="col-lg-4" key={i}>
-                                    <div className="pro">
-                                        <img src={item.image} alt='img' />
-                                        
-                                        <div className="des">
-                                            <span>adidas</span>
-                                            <h5>Carton Leave Tshirts</h5>
-                                            <div className="star">
-                                                <i className="fas fa-star" />
-                                                <i className="fas fa-star" />
-                                                <i className="fas fa-star" />
-                                                <i className="fas fa-star" />
-                                                <i className="fas fa-star" />
+                        {loading !== true ?
+                            <>
+                                {products && products.length > 0 &&
+                                    products.map((item, i) => (
+                                        <div className="col-lg-4" key={i}>
+                                            <div className="pro">
+                                                <img src={item.image} alt='img' />
+
+                                                <div className="des">
+                                                    <span>adidas</span>
+                                                    <h5>Carton Leave Tshirts</h5>
+                                                    <div className="star">
+                                                        <i className="fas fa-star" />
+                                                        <i className="fas fa-star" />
+                                                        <i className="fas fa-star" />
+                                                        <i className="fas fa-star" />
+                                                        <i className="fas fa-star" />
+                                                    </div>
+                                                    <h4>$78</h4>
+                                                </div>
+                                                <a onClick={() => handleCart(item)}><i className="fal fa-shopping-cart cart" /></a>
                                             </div>
-                                            <h4>$78</h4>
                                         </div>
-                                        <a onClick={() => handleCart(item)}><i className="fal fa-shopping-cart cart" /></a>
+                                    ))}
+                            </>
+                            :
+                            <>
+                                <div className="container">
+                                    <div className="row">
+                                        <div className="col-lg-4 mb-4">
+                                            <SkeletonLoader />
+                                        </div>
+                                        <div className="col-lg-4 mb-4">
+                                            <SkeletonLoader />
+                                        </div>
+                                        <div className="col-lg-4 mb-4">
+                                            <SkeletonLoader />
+                                        </div>
+                                        <div className="col-lg-4 mb-4">
+                                            <SkeletonLoader />
+                                        </div>
+                                        <div className="col-lg-4 mb-4">
+                                            <SkeletonLoader />
+                                        </div>
+                                        <div className="col-lg-4 mb-4">
+                                            <SkeletonLoader />
+                                        </div>
                                     </div>
                                 </div>
-                            ))}
+                            </>}
+
 
                     </div>
                 </div>

@@ -77,70 +77,10 @@ const NewArrival = () => {
                             </div>
                             <a href><i className="fal fa-shopping-cart cart" /></a>
                         </div>
-                        <div className="pro">
-                            <img src="https://i.postimg.cc/908J8S4q/n5.jpg" alt />
-                            <div className="des">
-                                <span>adidas</span>
-                                <h5>Purple Flowering Tshirts</h5>
-                                <div className="star">
-                                    <i className="fas fa-star" />
-                                    <i className="fas fa-star" />
-                                    <i className="fas fa-star" />
-                                    <i className="fas fa-star" />
-                                    <i className="fas fa-star" />
-                                </div>
-                                <h4>$78</h4>
-                            </div>
-                            <a href><i className="fal fa-shopping-cart cart" /></a>
-                        </div>
-                        <div className="pro">
-                            <img src="https://i.postimg.cc/X7r8NsGQ/n7.jpg" alt />
-                            <div className="des">
-                                <span>adidas</span>
-                                <h5>Short Knicker </h5>
-                                <div className="star">
-                                    <i className="fas fa-star" />
-                                    <i className="fas fa-star" />
-                                    <i className="fas fa-star" />
-                                    <i className="fas fa-star" />
-                                    <i className="fas fa-star" />
-                                </div>
-                                <h4>$78</h4>
-                            </div>
-                            <a href><i className="fal fa-shopping-cart cart" /></a>
-                        </div>
-                        <div className="pro">
-                            <img src="https://i.postimg.cc/JhrH0hYM/n8.jpg" alt />
-                            <div className="des">
-                                <span>adidas</span>
-                                <h5>2 in 1 Double Routed</h5>
-                                <div className="star">
-                                    <i className="fas fa-star" />
-                                    <i className="fas fa-star" />
-                                    <i className="fas fa-star" />
-                                    <i className="fas fa-star" />
-                                    <i className="fas fa-star" />
-                                </div>
-                                <h4>$78</h4>
-                            </div>
-                            <a href><i className="fal fa-shopping-cart cart" /></a>
-                        </div>
-                        <div className="pro">
-                            <img src="https://i.postimg.cc/2Sq4mytJ/f8.jpg" alt />
-                            <div className="des">
-                                <span>adidas</span>
-                                <h5>Ash Short</h5>
-                                <div className="star">
-                                    <i className="fas fa-star" />
-                                    <i className="fas fa-star" />
-                                    <i className="fas fa-star" />
-                                    <i className="fas fa-star" />
-                                    <i className="fas fa-star" />
-                                </div>
-                                <h4>$78</h4>
-                            </div>
-                            <a href><i className="fal fa-shopping-cart cart" /></a>
-                        </div>
+                        
+                        
+                        
+                        
                     </div>
                 </section>
             </div>

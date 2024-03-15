@@ -8,7 +8,7 @@ const Products = () => {
                 <p>Summer Collection New Modern Design</p>
                 <div className="pro-container">
                     <div className="pro" onclick="window.location.href='https://codepen.io/Motun/full/OJBwbrQ'">
-                        <img src="https://i.postimg.cc/kg9YYbTn/f1.jpg" alt />
+                            <img src="https://i.postimg.cc/kg9YYbTn/f1.jpg" alt />
                         <div className="des">
                             <span>adidas</span>
                             <h5>Carton Astronault Tshirts</h5>

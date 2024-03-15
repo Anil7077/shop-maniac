@@ -13,7 +13,6 @@ const index = () => {
             }
         },[data])
         console.log(data);
-        console.log(error);
        
     return (
         <>
@@ -23,7 +22,7 @@ const index = () => {
                         <LeftBar setCategory={setCategory}/>
                     </div>
                     <div className='col-lg-9'>
-                        <ProductList products={products} setProducts={setProducts} />
+                        <ProductList products={products} loadingtime={loading} setProducts={setProducts} />
                     </div>
                 </div>
             </div>

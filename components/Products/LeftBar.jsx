@@ -9,7 +9,7 @@ const LeftBar = ({setCategory}) => {
         </div>
         <div className='category-div mt-3'>
             <ul className='category-list'>
-                <li onClick={() => setCategory('electronics')}>electronics</li>
+                <li onClick={() => setCategory('electronics')}> electronics</li>
                 <li onClick={() => setCategory('jewelery')}>jewelery</li>
                 <li onClick={() => setCategory("men's clothing")}>men's clothing</li>
                 <li onClick={() => setCategory("women's clothing")}>women's clothing</li>
