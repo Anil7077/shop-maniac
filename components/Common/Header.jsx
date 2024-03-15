@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux'
 import { push as Menu } from 'react-burger-menu';
+import Sidebar from './Sidebar'
 
 
 const CustomBurgerIcon = () => <img src="images/menu (1).png" />;
@@ -20,15 +21,13 @@ const Header = () => {
         setIsOpen(state.isOpen);
     };
 
-    const closeMenu = () => {
-        setIsOpen(false);
-    };
+    
     return (
         <>
             <section id="header" className='sticky-top'>
                 <a href="#"><img src="https://i.postimg.cc/x8ncvFjr/logo.png" /></a>
                 <div>
-                    <ul id="navbar" style={{marginBottom: 0}}>
+                    <ul id="navbar" style={{ marginBottom: 0 }}>
                         <li><Link href="/" className={path == '/' ? "active" : ''}>Home</Link></li>
                         <li><Link href="/products" className={path == '/products' ? "active" : ''}>Shop</Link></li>
                         <li><Link href="/about-us" className={path == '/about-us' ? "active" : ''}>About Us</Link></li>
@@ -80,17 +79,20 @@ const Header = () => {
                         </Link>
                     </div>
                     {/* <i id="bar" className="fas fa-outdent" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" /> */}
-                    <Menu
-                     customBurgerIcon={<CustomBurgerIcon />}
-                        right
-                        isOpen={isOpen}
-                        onStateChange={handleMenuStateChange}
-                    >
-                        <Link href="/" className={path == '/' ? "active" : ''} onClick={closeMenu}>Home</Link>
-                        <Link href="/products" className={path == '/products' ? "active" : ''} onClick={closeMenu}>Shop</Link>
-                        <Link href="/about-us" className={path == '/about-us' ? "active" : ''} onClick={closeMenu}>About Us</Link>
-                        <Link href="/contact-us" className={path == '/contact-us' ? "active" : ''} onClick={closeMenu}>Contact</Link>
-                    </Menu>
+                    <div style={{width: "50px"}}>
+                        <Menu
+                            customBurgerIcon={<CustomBurgerIcon />}
+                            right
+                            isOpen={isOpen}
+                            onStateChange={handleMenuStateChange}
+                        >
+                            {/* <Link href="/" className={path == '/' ? "active" : ''} onClick={closeMenu}>Home</Link>
+                            <Link href="/products" className={path == '/products' ? "active" : ''} onClick={closeMenu}>Shop</Link>
+                            <Link href="/about-us" className={path == '/about-us' ? "active" : ''} onClick={closeMenu}>About Us</Link>
+                            <Link href="/contact-us" className={path == '/contact-us' ? "active" : ''} onClick={closeMenu}>Contact</Link> */}
+                            <Sidebar setIsOpen={setIsOpen}/>
+                        </Menu>
+                    </div>
 
                 </div>
             </section>
