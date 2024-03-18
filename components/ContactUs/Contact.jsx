@@ -1,53 +1,81 @@
 import React from 'react'
+import { useForm } from 'react-hook-form';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const onSubmit = async (data) => {
+        toast.success(`Hello ${data.firstname}, thanks for contacting us. We will get back to you shortly.`);
+        reset()
+    };
     return (
         <>
-            <div>
+            <div className='container register'>
                 <section className="contact_us">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-md-10 offset-md-1">
-                                <div className="contact_inner">
-                                    <div className="row">
-                                        <div className="col-md-10">
-                                            <div className="contact_form_inner">
-                                                <div className="contact_field">
-                                                    <h3>Contatc Us</h3>
-                                                    <p>Feel Free to contact us any time. We will get back to you as soon as we can!.</p>
-                                                    <input type="text" className="form-control form-group" placeholder="Name" />
-                                                    <input type="text" className="form-control form-group" placeholder="Email" />
-                                                    <textarea className="form-control form-group" placeholder="Message" defaultValue={""} />
-                                                    <button className="contact_form_submit">Send</button>
+                    <div className="row">
+                        <div className="col-lg-6">
+                            <div className="contact-form">
+                                <div className="container my-5">
+                                    <h1 className="mb-3">Contact Us</h1>
+                                    <form onSubmit={handleSubmit(onSubmit)}>
+                                        <div className="row g-3">
+                                            <div className="col-md-6">
+                                                <label htmlFor="firstname" className="form-label">Your Name</label>
+                                                <input type="text" className={errors.firstname ? "form-control error" : "form-control"} id="firstname" name="firstname"
+                                                    {...register('firstname', { required: true })} />
+                                                {errors.firstname && (
+                                                    <p className='errorMsg'>Email is required</p>
+                                                )}
+                                            </div>
+                                            <div className="col-md-6">
+                                                <label htmlFor="lastname" className="form-label">Your Surname</label>
+                                                <input type="text" className={errors.firstname ? "form-control error" : "form-control"} id="lastname" name="lastname"
+                                                    {...register('lastname', { required: true })} />
+                                                {errors.lastname && (
+                                                    <p className='errorMsg'>Email is required</p>
+                                                )}
+                                            </div>
+                                            <div className="col-md-6">
+                                                <label htmlFor="email" className="form-label">Your Email</label>
+                                                <input type="email" className={errors.firstname ? "form-control error" : "form-control"} id="email" name="email"
+                                                    {...register('email', { required: true })} />
+                                                {errors.email && (
+                                                    <p className='errorMsg'>Email is required</p>
+                                                )}
+                                            </div>
+                                            <div className="col-md-6">
+                                                <label htmlFor="subject" className="form-label">Your Subject</label>
+                                                <input type="text" className={errors.firstname ? "form-control error" : "form-control"} id="subject" name="subject"
+                                                    {...register('subject', { required: true })} />
+                                                {errors.subject && (
+                                                    <p className='errorMsg'>Email is required</p>
+                                                )}
+                                            </div>
+                                            <div className="col-12">
+                                                <label htmlFor="message" className="form-label">Your Message</label>
+                                                <textarea className={errors.firstname ? "form-control error" : "form-control"} id="message" name="message" rows={5} defaultValue={""}
+                                                    {...register('message', { required: true })} />
+                                                {errors.message && (
+                                                    <p className='errorMsg'>Email is required</p>
+                                                )}
+                                            </div>
+                                            <div className="col-12">
+                                                <div className="row">
+                                                    <div className="col-md-6">
+                                                        <button type="submit" className="btn btn-dark w-100 fw-bold">Send</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="col-md-2">
-                                            <div className="right_conatct_social_icon d-flex align-items-end">
-                                                <div className="socil_item_inner d-flex">
-                                                    <li><a href="#"><i className="fab fa-facebook-square" /></a></li>
-                                                    <li><a href="#"><i className="fab fa-instagram" /></a></li>
-                                                    <li><a href="#"><i className="fab fa-twitter" /></a></li>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="contact_info_sec">
-                                        <h4>Contact Info</h4>
-                                        <div className="d-flex info_single align-items-center">
-                                            <i className="fas fa-headset" />
-                                            <span>+91 8009 054294</span>
-                                        </div>
-                                        <div className="d-flex info_single align-items-center">
-                                            <i className="fas fa-envelope-open-text" />
-                                            <span>info@flightmantra.com</span>
-                                        </div>
-                                        <div className="d-flex info_single align-items-center">
-                                            <i className="fas fa-map-marked-alt" />
-                                            <span>1000+ Travel partners and 65+ Service city across India, USA, Canada &amp; UAE</span>
-                                        </div>
-                                    </div>
+                                    </form>
                                 </div>
+
+                            </div>
+                        </div>
+                        <div className="col-lg-6 d-flex justify-content-center align-items-center">
+                            <div className="contact-img" style={{ width: '500px', height: '300px' }}>
+                                <img src='/images/contact.png' style={{ width: '100%' }} />
                             </div>
                         </div>
                     </div>

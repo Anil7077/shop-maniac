@@ -5,8 +5,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import SkeletonLoader from '../Common/SkeletonLoader'
+import { useSession } from 'next-auth/react'
 
 const ProductList = ({ products, setProducts, loadingtime }) => {
+    const { data: session } = useSession()
     const [sort, setSort] = useState("")
     const [itemPerPage, setItemPerPage] = useState()
     const dispatch = useDispatch()
@@ -54,8 +56,12 @@ console.log(loading);
             prodDetails,
             id: Date.now(),
         }
-        dispatch(addToCart(data))
-        toast.success("added to cart successfully");
+        if(session){
+            dispatch(addToCart(data))
+            toast.success("added to cart successfully");
+        }else{
+            toast.error("You need to login to add product to cart")
+        }
     }
     return (
         <>

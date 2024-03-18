@@ -3,7 +3,7 @@ import React from 'react'
 const Banner = () => {
     return (
         <>
-            <section id="hero">
+            <section id="hero" style={{backgroundImage: 'url(/images/hero4.png)'}}>
                 <h4>Trade-in-fair</h4>
                 <h2>Super value deals</h2>
                 <h1>On all Products</h1>

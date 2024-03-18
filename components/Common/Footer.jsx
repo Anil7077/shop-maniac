@@ -1,6 +1,14 @@
 import React from 'react'
+import { useForm } from 'react-hook-form';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Footer = () => {
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const onSubmit = async (data) => {
+        toast.success("Subscribed newsletter successfully");
+        reset()
+    };
     return (
         <>
             <div>
@@ -10,8 +18,17 @@ const Footer = () => {
                         <p>Get Email updates about our latest shop and <span> special offers.</span> </p>
                     </div>
                     <div className="form">
-                        <input type="text" placeholder="Your email address" />
-                        <button className="btn normal">Sign Up</button>
+                        <form onSubmit={handleSubmit(onSubmit)}>
+                            <input type="text" placeholder="Your email address" name='email' className={errors.email ? "error" : ""}
+                                {...register('email', {
+                                    required: true,
+                                    pattern: {
+                                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                        
+                                      }
+                                })} />
+                            <button className="btn normal" type='submit'>Sign Up</button>
+                        </form>
                     </div>
                 </section>
                 <footer className="section-p1">
@@ -37,18 +54,11 @@ const Footer = () => {
                                     <h4>About</h4>
                                     <a href="#">About Us</a>
                                     <a href="#">Delivery Information</a>
-                                    <a href="#">Privacy Policy</a>
-                                    <a href="#">Terms and Condition</a>
-                                    <a href="#">Contact Us</a>
                                 </div>
                                 <div className="col">
                                     <h4>My Account</h4>
                                     <a href="#">Sign In</a>
                                     <a href="#">View Cart</a>
-                                    <a href="#">My Account</a>
-                                    <a href="#">My Wishlist</a>
-                                    <a href="#">Track my Order</a>
-                                    <a href="#">Help</a>
                                 </div>
                                 <div className="col install">
                                     <h4>Install App</h4>
@@ -65,7 +75,9 @@ const Footer = () => {
                                 <p> © 2023 All rights reserved! made by Tunrayo </p>
                             </div>
                         </strong></strong></footer><strong><strong>
-                        </strong></strong></div>
+                        </strong></strong>
+            </div>
+            <ToastContainer />
 
         </>
     )

@@ -4,7 +4,7 @@ const NewArrival = () => {
     return (
         <>
             <div>
-                <section id="banner" className="section-m1">
+                <section id="banner" className="section-m1" style={{backgroundImage: 'url(/images/b2.jpg)'}}>
                     <h4> Repair Service</h4>
                     <h2>Up to <span>70% off </span> - All Tshirts and Accessories</h2>
                     <button className="btn normal">Explore more</button>

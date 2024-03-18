@@ -1,4 +1,5 @@
 import { signIn } from 'next-auth/react';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
@@ -58,7 +59,7 @@ const LoginPage = () => {
                     </div>
                     <button type="submit">Login</button>
                     <div className="bottom-text">
-                        <p>Don't have an account? <a href="#">Sign Up</a></p>
+                        <p>Don't have an account? <Link href="/register">Sign Up</Link></p>
                         <p><a href="#">Forgot password?</a></p>
                     </div>
                 </form>

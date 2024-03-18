@@ -5,27 +5,27 @@ const Feature = () => {
         <>
             <section id="feature" className="section-p1">
                 <div className="fe-box">
-                    <img src="https://i.postimg.cc/PrN2Y6Cv/f1.png" alt />
+                    <img src="/images/f1.png" alt='aa' />
                     <h6>Free Shipping</h6>
                 </div>
                 <div className="fe-box">
-                    <img src="https://i.postimg.cc/qvycxW4q/f2.png" alt />
+                    <img src="/images/f2.png" alt='aa' />
                     <h6>Online Order</h6>
                 </div>
                 <div className="fe-box">
-                    <img src="https://i.postimg.cc/1Rdphyz4/f3.png" alt />
+                    <img src="/images/f3.png" alt='aa' />
                     <h6>Save Money</h6>
                 </div>
                 <div className="fe-box">
-                    <img src="https://i.postimg.cc/GpYc2JFZ/f4.png" alt />
+                    <img src="/images/f4.png" alt='aa' />
                     <h6>Promotions</h6>
                 </div>
                 <div className="fe-box">
-                    <img src="https://i.postimg.cc/4yFCwmv6/f5.png" alt />
+                    <img src="/images/f5.png" alt='aa' />
                     <h6>Happy Sell</h6>
                 </div>
                 <div className="fe-box">
-                    <img src="https://i.postimg.cc/gJN1knTC/f6.png" alt />
+                    <img src="/images/f6.png" alt='aa' />
                     <h6>F24/7 Support</h6>
                 </div>
             </section>

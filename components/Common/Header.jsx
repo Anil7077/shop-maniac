@@ -21,7 +21,7 @@ const Header = () => {
         setIsOpen(state.isOpen);
     };
 
-    
+
     return (
         <>
             <section id="header" className='sticky-top'>
@@ -39,21 +39,23 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className='login-register-box'>
+                    <div className='cart-items-icon'>
+                        <Link href="/cart-items">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span className='cart-sup'>{cartCount}</span>
+                        </Link>
+                    </div>
                     {!session ?
                         <>
                             <div style={{ display: 'flex', alignItems: 'center' }}>
-                                <div className='cart-items-icon'>
-                                    <Link href="/cart-items">
-                                        <i class="fas fa-shopping-cart"></i>
-                                        <span className='cart-sup'>{cartCount}</span>
-                                    </Link>
-                                </div>
-                                <button className='login-btn' onClick={() => signIn()}>
+                                <Link className='login-btn' href="/login"
+                                //  onClick={() => signIn()}
+                                >
                                     <i class="fas fa-sign-in-alt me-2"></i> Login
-                                </button>
-                                <button className='register-btn'>
+                                </Link>
+                                <Link className='register-btn' href="/register">
                                     <i class="fas fa-user me-2"></i> Register
-                                </button>
+                                </Link>
                             </div>
                         </>
                         :
@@ -79,18 +81,14 @@ const Header = () => {
                         </Link>
                     </div>
                     {/* <i id="bar" className="fas fa-outdent" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" /> */}
-                    <div style={{width: "50px"}}>
+                    <div style={{ width: "50px" }}>
                         <Menu
                             customBurgerIcon={<CustomBurgerIcon />}
                             right
                             isOpen={isOpen}
                             onStateChange={handleMenuStateChange}
                         >
-                            {/* <Link href="/" className={path == '/' ? "active" : ''} onClick={closeMenu}>Home</Link>
-                            <Link href="/products" className={path == '/products' ? "active" : ''} onClick={closeMenu}>Shop</Link>
-                            <Link href="/about-us" className={path == '/about-us' ? "active" : ''} onClick={closeMenu}>About Us</Link>
-                            <Link href="/contact-us" className={path == '/contact-us' ? "active" : ''} onClick={closeMenu}>Contact</Link> */}
-                            <Sidebar setIsOpen={setIsOpen}/>
+                            <Sidebar setIsOpen={setIsOpen} />
                         </Menu>
                     </div>
 
