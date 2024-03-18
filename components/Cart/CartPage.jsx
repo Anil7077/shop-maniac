@@ -1,4 +1,4 @@
-import { removeCartItem } from '@/store/slices/newCartSlice';
+import { removeAll, removeCartItem } from '@/store/slices/newCartSlice';
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -18,6 +18,9 @@ const CartPage = () => {
             <div className="container my-5">
                 {users && users.length > 0 ?
                     <>
+                        <div style={{display: 'flex', justifyContent: 'end', marginBottom: '15px'}}>
+                            <button onClick={() => dispatch(removeAll())} className='remove-all-cart'>remove all</button>
+                        </div>
                         {users.map((item, i) => (
                             <div className="cart-item" key={i}>
                                 <img src={item.prodDetails.image} alt="Item 1" />
@@ -28,8 +31,8 @@ const CartPage = () => {
                                     <div className="item-quantity">Quantity: 1</div>
                                     <div className="item-price">${item.prodDetails.price}</div>
                                 </div>
-                                <button className='cart-item-remove' onClick={() => deletedItemsId(item.id)} 
-                                data-bs-toggle="modal" data-bs-target="#exampleModal">Remove</button>
+                                <button className='cart-item-remove' onClick={() => deletedItemsId(item.id)}
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal">Remove</button>
                             </div>
 
                         ))}
@@ -47,13 +50,13 @@ const CartPage = () => {
                 <div className="modal-dialog modal-dialog-centered modal-sm ">
                     <div className="modal-content bg-dark">
                         <div className="modal-body">
-                            <h4 style={{color: 'white'}}>Are you sure ?</h4>
+                            <h4 style={{ color: 'white' }}>Are you sure ?</h4>
                             <div className='d-flex justify-content-end gap-2'>
                                 <button className='gn-btn' data-bs-dismiss="modal" onClick={handleRemoveItems}>Yes</button>
                                 <button className='rd-btn' data-bs-dismiss="modal">No</button>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>

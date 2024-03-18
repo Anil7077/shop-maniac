@@ -6,6 +6,7 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import SkeletonLoader from '../Common/SkeletonLoader'
 import { useSession } from 'next-auth/react'
+import Link from 'next/link'
 
 const ProductList = ({ products, setProducts, loadingtime }) => {
     const { data: session } = useSession()
@@ -68,6 +69,7 @@ console.log(loading);
             <div className='top-filter-box' >
                 <div className='select-fields'>
                     <div>
+                       
                         <label htmlFor="">Sort by</label>
                         <select onChange={(e) => setSort(e.target.value)}>
                             <option value="asc">Ascending</option>
@@ -104,8 +106,8 @@ console.log(loading);
                                                 <img src={item.image} alt='img' />
 
                                                 <div className="des">
-                                                    <span>adidas</span>
-                                                    <h5>Carton Leave Tshirts</h5>
+                                                    <span>{item.category}</span>
+                                                    <h5><Link href={`/product-details/${item.id}`}>{item.title}</Link></h5>
                                                     <div className="star">
                                                         <i className="fas fa-star" />
                                                         <i className="fas fa-star" />
