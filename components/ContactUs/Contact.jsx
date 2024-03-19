@@ -96,7 +96,7 @@ const Contact = () => {
                     </div>
                 </section>
             </div>
-
+            <ToastContainer />
         </>
     )
 }
