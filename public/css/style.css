@@ -807,7 +807,7 @@
    }
 
    #header {
-     padding: 10px 30px;
+     padding: 10px 5px;
    }
 
    .quantity {
@@ -994,6 +994,12 @@
    border-bottom: 1px solid #dedede;
    margin-bottom: 10px;
    padding-bottom: 8px;
+   display: flex;
+    align-items: center;
+    gap: 7px;
+ }
+ .left-filter-box .category-div .category-list li:hover{
+  cursor: pointer;
  }
 
  .left-filter-box .category-div ul {
@@ -1215,7 +1221,7 @@
 /* ==========ends=============== */
 .skeleton-box-div{ border: 1px solid #e0e0e0; padding: 15px; border-radius: 20px;}
 .login-register-box a{ text-decoration: none;}
-.sidebar-log-btn{position: absolute; bottom: 22px; width: 100%;}
+.sidebar-log-btn{position: absolute; bottom: 38px; width: 100%;}
 .sidebar-log-btn .log-btn{ width: 100%; padding: 10px 0; border: none; background: #097f8a; color: white; font-size: 20px;}
 .sidebar-log-btn .login-link{ width: 100%; padding: 10px 0; border: none; background: #00b70f; text-align: center;}
 .sidebar-log-btn .login-link a{ color: white; text-decoration: none; font-size: 20px;}

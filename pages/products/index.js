@@ -19,7 +19,7 @@ const index = () => {
             <div className='container my-5'>
                 <div className='row'>
                     <div className='col-lg-3 '>
-                        <LeftBar setCategory={setCategory}/>
+                        <LeftBar setCategory={setCategory} category={category} setProducts={setProducts}/>
                     </div>
                     <div className='col-lg-9'>
                         <ProductList products={products} loadingtime={loading} setProducts={setProducts} />
