@@ -1164,7 +1164,7 @@
  .register .errorMsg{ color: rgb(191, 22, 80); margin-bottom: 4px; margin-top: 0;}
  .bm-burger-bars { background: #373a47;}
 .bm-burger-bars-hover { background: #a90000;}
-.bm-menu-wrap{ position: fixed; right: 0px; top: 0 !important; z-index: 1100; width: 200px !important; height: 100vh !important;
+.bm-menu-wrap{ position: fixed; right: 0px; top: 0 !important; z-index: 1100; width: 200px !important; height: 95% !important;
  transition: all 0.5s ease 0s; background: #e3e6f3; display: flex; justify-content: center; padding-top: 30px;}
 .bm-burger-button img{ height: 40px; width: 40px;}
 .bm-burger-button button{ width: 50px !important; right: 14px !important; left: unset !important;}
@@ -1221,7 +1221,7 @@
 /* ==========ends=============== */
 .skeleton-box-div{ border: 1px solid #e0e0e0; padding: 15px; border-radius: 20px;}
 .login-register-box a{ text-decoration: none;}
-.sidebar-log-btn{position: absolute; bottom: 38px; width: 100%;}
+.sidebar-log-btn{position: absolute; bottom: 0px; width: 100%;}
 .sidebar-log-btn .log-btn{ width: 100%; padding: 10px 0; border: none; background: #097f8a; color: white; font-size: 20px;}
 .sidebar-log-btn .login-link{ width: 100%; padding: 10px 0; border: none; background: #00b70f; text-align: center;}
 .sidebar-log-btn .login-link a{ color: white; text-decoration: none; font-size: 20px;}
