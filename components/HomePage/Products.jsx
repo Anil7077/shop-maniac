@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const Products = () => {
@@ -7,7 +8,7 @@ const Products = () => {
                 <h2>Featured Products</h2>
                 <p>Summer Collection New Modern Design</p>
                 <div className="pro-container">
-                    <div className="pro" onclick="window.location.href='https://codepen.io/Motun/full/OJBwbrQ'">
+                    <div className="pro">
                             <img src="https://i.postimg.cc/kg9YYbTn/f1.jpg" alt />
                         <div className="des">
                             <span>adidas</span>
@@ -21,7 +22,7 @@ const Products = () => {
                             </div>
                             <h4>$78</h4>
                         </div>
-                        <a href><i className="fal fa-shopping-cart cart" /></a>
+                        <Link href='/products'><i className="fal fa-shopping-cart cart" /></Link>
                     </div>
                     <div className="pro">
                         <img src="https://i.postimg.cc/2yhT2kvb/f2.jpg" alt />
@@ -37,7 +38,7 @@ const Products = () => {
                             </div>
                             <h4>$78</h4>
                         </div>
-                        <a href><i className="fal fa-shopping-cart cart" /></a>
+                        <Link href='/products'><i className="fal fa-shopping-cart cart" /></Link>
                     </div>
                     <div className="pro">
                         <img src="https://i.postimg.cc/VL9DtNm2/f3.jpg" alt />
@@ -53,7 +54,7 @@ const Products = () => {
                             </div>
                             <h4>$78</h4>
                         </div>
-                        <a href><i className="fal fa-shopping-cart cart" /></a>
+                        <Link href='/products'><i className="fal fa-shopping-cart cart" /></Link>
                     </div>
                     <div className="pro">
                         <img src="https://i.postimg.cc/vZ3hPS1z/f4.jpg" alt />
@@ -69,7 +70,7 @@ const Products = () => {
                             </div>
                             <h4>$78</h4>
                         </div>
-                        <a href><i className="fal fa-shopping-cart cart" /></a>
+                        <Link href='/products'><i className="fal fa-shopping-cart cart" /></Link>
                     </div>
                     <div className="pro">
                         <img src="https://i.postimg.cc/q7FLrhx6/f5.jpg" alt />
@@ -85,7 +86,7 @@ const Products = () => {
                             </div>
                             <h4>$78</h4>
                         </div>
-                        <a href><i className="fal fa-shopping-cart cart" /></a>
+                        <Link href='/products'><i className="fal fa-shopping-cart cart" /></Link>
                     </div>
                     <div className="pro">
                         <img src="https://i.postimg.cc/L86BZByZ/f7.jpg" alt />
@@ -101,7 +102,7 @@ const Products = () => {
                             </div>
                             <h4>$78</h4>
                         </div>
-                        <a href><i className="fal fa-shopping-cart cart" /></a>
+                        <Link href='/products'><i className="fal fa-shopping-cart cart" /></Link>
                     </div>
                     <div className="pro">
                         <img src="https://i.postimg.cc/zDxJ2f0H/f6.jpg" alt />
@@ -117,7 +118,7 @@ const Products = () => {
                             </div>
                             <h4>$78</h4>
                         </div>
-                        <a href><i className="fal fa-shopping-cart cart" /></a>
+                        <Link href='/products'><i className="fal fa-shopping-cart cart" /></Link>
                     </div>
                     <div className="pro">
                         <img src="https://i.postimg.cc/x8qcBrpP/n6.jpg" alt />
@@ -133,7 +134,7 @@ const Products = () => {
                             </div>
                             <h4>$78</h4>
                         </div>
-                        <a href><i className="fal fa-shopping-cart cart" /></a>
+                        <Link href='/products'><i className="fal fa-shopping-cart cart" /></Link>
                     </div>
                 </div>
             </section>
