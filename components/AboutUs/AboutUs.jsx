@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactPlayer from 'react-player'
 
 const AboutUs = () => {
     return (
@@ -27,9 +28,13 @@ const AboutUs = () => {
                                 <p className="text-muted mt-3"> Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage.</p>
                             </div>
                         </div>
-                        <div className="col-lg-6">
+                        <div className="col-lg-6 d-flex justify-content-center">
                             <div className="img_about mt-3">
-                                <img src="https://i.ibb.co/qpz1hvM/About-us.jpg" alt className="img-fluid mx-auto d-block" />
+                                {/* <img src="https://i.ibb.co/qpz1hvM/About-us.jpg" alt='aa' className="img-fluid mx-auto d-block" /> */}
+                                <ReactPlayer
+                                    className='react-player'
+                                    url='https://www.youtube.com/watch?v=B8S2jhWwTDg'
+                                />
                             </div>
                         </div>
                     </div>

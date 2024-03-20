@@ -828,9 +828,9 @@
      font-size: 28px
    }
 
-   p {
+   .section_subtitle {
      line-height: 24px;
-     font-size: 10px;
+     font-size: 15px;
    }
 
    #hero button {
@@ -1384,5 +1384,13 @@
 }
 .remove-all-cart:hover{
   background-color: #ae2525;
+}
+.vertical_content_manage .img_about{
+  height: 269px;
+  width: 480px;
+}
+.vertical_content_manage .img_about .react-player{
+  width: 100% !important;
+  height: 100% !important;
 }
 /* ----------------ends ----------------------- */
