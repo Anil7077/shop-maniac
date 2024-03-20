@@ -6,11 +6,12 @@ import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux'
 import { push as Menu } from 'react-burger-menu';
 import Sidebar from './Sidebar'
+import Image from 'next/image'
 
 
 const CustomBurgerIcon = () => <img src="images/menu (1).png" />;
 
-const Header = () => {
+const Header = ({bannerTitle}) => {
     const { data: session } = useSession()
     const users = useSelector((state) => state.newCart.myCart)
     const cartCount = users ? users.length : 0;
@@ -94,6 +95,51 @@ const Header = () => {
 
                 </div>
             </section>
+
+            {router.pathname !== "/" && router.pathname !== "/login" && router.pathname !== "/register" && router.pathname !== "/404" && (
+                <section className="page-title">
+                    <div className="ani-1">
+                        <Image
+                            src="/images/page-banner-start.svg"
+                            alt="asd"
+                            className="ani-pl"
+                            width={100}
+                            height={100}
+                        />
+                        <Image
+                            src="/images/1.svg"
+                            alt="asd"
+                            className="ani-pl2"
+                            width={100}
+                            height={100}
+                        />
+                        <Image
+                            src="/images/3.svg"
+                            alt="asd"
+                            className="ani-pl3"
+                            width={100}
+                            height={100}
+                        />
+                    </div>
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-12">
+                                <div className="title-outer">
+                                    <h1>{bannerTitle}</h1>
+                                    <ul className="page-breadcrumb">
+                                        <li>
+                                            <Link href="/" exact={true}>
+                                                Home
+                                            </Link>
+                                        </li>
+                                        <li>{bannerTitle}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            )}
 
         </>
     )

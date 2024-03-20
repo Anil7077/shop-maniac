@@ -1,7 +1,8 @@
 import CartPage from '@/components/Cart/CartPage'
 import React from 'react'
 
-const index = () => {
+const index = ({setBannerTitle}) => {
+  setBannerTitle("Cart-items")
   return (
     <>
       <CartPage />

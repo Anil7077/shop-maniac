@@ -5,16 +5,18 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from '@/store/Store';
 import { SessionProvider } from "next-auth/react"
 import NextTopLoader from "nextjs-toploader";
+import { useState } from "react";
 export default function App({
   Component,
   pageProps: { session, ...pageProps },
 }) {
+  const [bannerTitle, setBannerTitle] = useState("")
   return (
     <SessionProvider session={session}>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <Header />
-          <Component {...pageProps} />
+          <Header bannerTitle={bannerTitle}/>
+          <Component {...pageProps} setBannerTitle={setBannerTitle}/>
           <NextTopLoader
             color="linear-gradient(90deg, #e33af2, #c4540a)"
             initialPosition={0.08}

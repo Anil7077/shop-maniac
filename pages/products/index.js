@@ -3,7 +3,8 @@ import ProductList from '@/components/Products/ProductList'
 import getData from '@/utils/ApiCalls'
 import React, { useEffect, useState } from 'react'
 
-const index = () => {
+const index = ({setBannerTitle}) => {
+    setBannerTitle("Products")
     const [category, setCategory] = useState()
     const [products, setProducts] = useState()
         const {data, loading, error} = getData('https://fakestoreapi.com/products')
