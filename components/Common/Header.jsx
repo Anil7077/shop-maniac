@@ -26,7 +26,7 @@ const Header = ({bannerTitle}) => {
     return (
         <>
             <section id="header" className='sticky-top'>
-                <a href="#"><img src="https://i.postimg.cc/x8ncvFjr/logo.png" /></a>
+                <Link href="/"><img src="https://i.postimg.cc/x8ncvFjr/logo.png" /></Link>
                 <div>
                     <ul id="navbar" style={{ marginBottom: 0 }}>
                         <li><Link href="/" className={path == '/' ? "active" : ''}>Home</Link></li>

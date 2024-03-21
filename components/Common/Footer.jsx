@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react'
 import { useForm } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';
@@ -52,13 +53,15 @@ const Footer = () => {
                             <div className="sec">
                                 <div className="col">
                                     <h4>About</h4>
-                                    <a href="#">About Us</a>
-                                    <a href="#">Delivery Information</a>
+                                    <Link href="/">Home</Link>
+                                    <Link href="/about-us">About Us</Link>
+                                    <Link href="/products">Products</Link>
+                                    <Link href="/contact-us">Contact us</Link>
                                 </div>
                                 <div className="col">
                                     <h4>My Account</h4>
-                                    <a href="#">Sign In</a>
-                                    <a href="#">View Cart</a>
+                                    <Link href="/login">Log in</Link>
+                                    <Link href="/register">Register</Link>
                                 </div>
                                 <div className="col install">
                                     <h4>Install App</h4>

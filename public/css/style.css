@@ -107,6 +107,12 @@ body {
   #product1 .pro img {
     width: 220px !important;
   }
+  footer .col {
+    margin-left: unset !important;
+}
+.discount-para{
+  width: 180px !important;
+}
 }
 
 /* ======login page ends================ */
