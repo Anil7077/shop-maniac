@@ -56,6 +56,7 @@ console.log(loading);
         const data = {
             prodDetails,
             id: Date.now(),
+            quantity: 1
         }
         if(session){
             dispatch(addToCart(data))

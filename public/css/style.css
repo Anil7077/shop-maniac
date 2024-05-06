@@ -1030,17 +1030,17 @@ footer .copyright {
   color: #009688;
 }
 .cart-item .cart-item-remove {
-  width: 80px;
+  width: 50px;
   height: 40px;
   border: none;
-  color: #0018ff;
+  color: #ff0000;
   font-weight: 600;
   border-radius: 20px;
-  background-color: #9a9a9a;
+  background-color: #000000;
 }
 .cart-item .cart-item-remove:hover {
-  background-color: #0018ff;
-  color: white;
+  background-color: #8d000047;
+  color: #000000;
 }
 
 @media (max-width: 768px) {
@@ -1708,3 +1708,42 @@ footer .copyright {
   }
 }
 /* ============================ */
+/* ========new-login page======= */
+.login,
+.image {
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-image: url('https://res.cloudinary.com/mhmd/image/upload/v1555917661/art-colorful-contemporary-2047905_dxtao7.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+.total-bill p{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.total-bill{
+  border: 1px solid #d9d9d9;
+  padding: 10px;
+  border-radius: 5px;
+}
+.CHECKOUT-BTN{
+  border: none;
+  margin-top: 20px;
+  float: right;
+  background: #088178;
+  color: white;
+  font-weight: 700;
+  padding: 5px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+.CHECKOUT-BTN:hover{
+  color: #088178;
+  background-color: #e6e6e6;
+}
+.cart-page .increase-btn, .cart-page .decrease-btn{
+  border: none;
+}
