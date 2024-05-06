@@ -74,7 +74,7 @@ const CartPage = () => {
                                                 <button className='decrease-btn' onClick={() => dispatch(decreaseQty(item?.id))}>-</button>
                                             </div>
                                             <div>
-                                                <div className="item-quantity">Quantity: 1</div>
+                                                <div className="item-quantity">Quantity: {item?.quantity}</div>
                                                 <div className="item-price">${((item?.prodDetails?.price) * (item?.quantity)).toFixed(2)}</div>
                                             </div>
                                             <button className='cart-item-remove' onClick={() => deletedItemsId(item?.id)}
