@@ -109,10 +109,10 @@ body {
   }
   footer .col {
     margin-left: unset !important;
-}
-.discount-para{
-  width: 180px !important;
-}
+  }
+  .discount-para {
+    width: 180px !important;
+  }
 }
 
 /* ======login page ends================ */
@@ -1646,7 +1646,7 @@ footer .copyright {
   line-height: 20px;
   color: dimgray;
 }
-.page-title ul{
+.page-title ul {
   padding-left: 0 !important;
 }
 .ani-1 .ani-pl3 {
@@ -1715,21 +1715,21 @@ footer .copyright {
 }
 
 .bg-image {
-  background-image: url('https://res.cloudinary.com/mhmd/image/upload/v1555917661/art-colorful-contemporary-2047905_dxtao7.jpg');
+  background-image: url("https://res.cloudinary.com/mhmd/image/upload/v1555917661/art-colorful-contemporary-2047905_dxtao7.jpg");
   background-size: cover;
   background-position: center center;
 }
-.total-bill p{
+.total-bill p {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.total-bill{
+.total-bill {
   border: 1px solid #d9d9d9;
   padding: 10px;
   border-radius: 5px;
 }
-.CHECKOUT-BTN{
+.CHECKOUT-BTN {
   border: none;
   margin-top: 20px;
   float: right;
@@ -1740,10 +1740,31 @@ footer .copyright {
   margin-bottom: 20px;
   border-radius: 10px;
 }
-.CHECKOUT-BTN:hover{
+.CHECKOUT-BTN:hover {
   color: #088178;
   background-color: #e6e6e6;
 }
-.cart-page .increase-btn, .cart-page .decrease-btn{
+.cart-page .increase-btn,
+.cart-page .decrease-btn {
   border: none;
+}
+.cart-payment-modal .modal-body input {
+  display: block;
+  margin-top: 12px;
+  width: 100%;
+  padding: 8px;
+  border: none;
+  background: #d7e6f4;
+  border-radius: 5px;
+}
+.cart-payment-modal .modal-body textarea {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  background: #d7e6f4;
+  border-radius: 5px;
+  margin-top: 12px;
+}
+.cart-payment-modal .modal-body input:focus-visible , .cart-payment-modal .modal-body textarea:focus-visible{
+  outline: none !important;
 }

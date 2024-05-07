@@ -19,15 +19,15 @@ const ProductList = ({ products, setProducts, loadingtime }) => {
 
     useEffect(() => {
         const getSorted = () => {
-            setLoading(true)
             try {
+                setLoading(true)
                 axios.get(`https://fakestoreapi.com/products?sort=${sort}`).then((response) => {
                     // console.log("my data",response);
                     setProducts(response.data)
                 })
             } catch (error) {
                 console.log(error);
-            } finally{
+            } finally {
                 setLoading(false)
             }
         }
@@ -35,21 +35,21 @@ const ProductList = ({ products, setProducts, loadingtime }) => {
     }, [sort])
     useEffect(() => {
         const getItemsPerPage = () => {
-            setLoading(true)
             try {
+                setLoading(true)
                 axios.get(`https://fakestoreapi.com/products?limit=${itemPerPage}`).then((response) => {
                     // console.log("my data",response);
                     setProducts(response.data)
                 })
             } catch (error) {
                 console.log(error);
-            }finally{
+            } finally {
                 setLoading(false)
             }
         }
         if (itemPerPage) getItemsPerPage()
     }, [itemPerPage])
-console.log(loading);
+    console.log(loading);
 
     const handleCart = (prodDetails) => {
         console.log(prodDetails);
@@ -58,10 +58,10 @@ console.log(loading);
             id: Date.now(),
             quantity: 1
         }
-        if(session){
+        if (session) {
             dispatch(addToCart(data))
             toast.success("added to cart successfully");
-        }else{
+        } else {
             toast.error("You need to login to add product to cart")
         }
     }
@@ -70,7 +70,7 @@ console.log(loading);
             <div className='top-filter-box' >
                 <div className='select-fields'>
                     <div>
-                       
+
                         <label htmlFor="">Sort by</label>
                         <select onChange={(e) => setSort(e.target.value)}>
                             <option value="asc">Ascending</option>
@@ -80,10 +80,11 @@ console.log(loading);
                     <div>
                         <label htmlFor="">Items per page</label>
                         <select onChange={(e) => setItemPerPage(e.target.value)}>
+                            <option value={26}>All</option>
                             <option value={5}>5</option>
                             <option value={10}>10</option>
                             <option value={20}>20</option>
-                            <option value={26}>26</option>
+
                         </select>
                     </div>
                     <div>

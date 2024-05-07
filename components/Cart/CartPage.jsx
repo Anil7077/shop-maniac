@@ -1,9 +1,15 @@
 import { removeAll, removeCartItem, increaseQty, decreaseQty } from '@/store/slices/newCartSlice';
 import React, { useEffect, useState } from 'react'
+import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
+import QRCode from "react-qr-code";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const CartPage = () => {
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const users = useSelector((state) => state.newCart.myCart)
+    const [newContent, setNewContent] = useState(false)
     const dispatch = useDispatch()
     const [seleteId, setDeleteId] = useState()
     const [totalAmount, setTotalAmount] = useState(0);
@@ -50,6 +56,10 @@ const CartPage = () => {
     const handleRemoveAll = () => {
         dispatch(removeAll())
     }
+    const onSubmit = async (data) => {
+        toast.success('Orders placed successfully')
+        setNewContent(true)
+    };
     return (
         <>
             <div className="container cart-page">
@@ -105,7 +115,8 @@ const CartPage = () => {
                                     <p><b>Subtotal : </b> <b>{subTotal}</b></p>
 
                                 </div>
-                                <button className='CHECKOUT-BTN'>PROCEED TO CHECKOUT</button>
+                                <button className='CHECKOUT-BTN'
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal3">PROCEED TO CHECKOUT</button>
                             </div>
                         }
                     </div>
@@ -145,6 +156,74 @@ const CartPage = () => {
                 </div>
             </div>
             {/* ------------------ */}
+            {/* modal--3-- */}
+
+            <div className="modal fade" id="exampleModal3" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog cart-payment-modal ">
+                    <div className="modal-content register">
+
+                        <b className='text-center mt-2' style={{ fontSize: '23px' }}>Pay to place Order</b>
+                        <form onSubmit={handleSubmit(onSubmit)}>
+                            <div className="modal-body">
+                                <input type="text" placeholder='Name'
+                                    {...register('name', {
+                                        required: true
+                                    })} />
+                                {errors.name && (
+                                    <p className='errorMsg'>Name is required</p>
+                                )}
+                                <input type="number" placeholder='Phone number'
+                                    {...register('number', {
+                                        required: true
+                                    })} />
+                                {errors.number && (
+                                    <p className='errorMsg'>Phone number is required</p>
+                                )}
+                                <input type="email" placeholder='Email'
+                                    {...register('email', {
+                                        required: 'Email is required',
+                                        pattern: {
+                                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                            message: "invalid email address"
+                                        }
+                                    })} />
+                                {errors.email && (
+                                    <p className='errorMsg'>{errors.email.message}</p>
+                                )}
+                                <input type="text" placeholder='Pin code'
+                                    {...register('pin_code', {
+                                        required: true
+                                    })} />
+                                {errors.pin_code && (
+                                    <p className='errorMsg'>Pin code is required</p>
+                                )}
+                                <textarea name="" id="" placeholder='Address' rows={5}
+                                    {...register('address', {
+                                        required: true
+                                    })}></textarea>
+                                {errors.address && (
+                                    <p className='errorMsg'>Address is required</p>
+                                )}
+                                <div className='mt-2'>
+                                    <h5>Scan the code and pay :</h5>
+                                    <div>
+                                        <QRCode
+                                            value={`payment : ${subTotal}`}
+                                            size={100}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="modal-footer">
+                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" className="btn btn-primary">Pay</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {/* ------------ */}
+            <ToastContainer />
         </>
     )
 }
